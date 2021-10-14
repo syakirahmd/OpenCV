@@ -6,6 +6,7 @@ cap = cv2.VideoCapture(0)
 
 while True:
     ret, frame = cap.read()
+    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     if cv2.waitKey(1) == ord('p'):
         thresh += 10
     ret1, output = cv2.threshold(frame, thresh, 255, cv2.THRESH_BINARY)

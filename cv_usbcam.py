@@ -17,6 +17,7 @@ else:
     ret = False
 while ret:
     ret, frame = cap.read()
+    frame = cv.flip(frame, 1)
     # ret1, frame = cv.threshold(frame, 127, 255, cv.THRESH_BINARY)
     cv.imshow(windowName, frame)
     if cv.waitKey(1) == 27:
